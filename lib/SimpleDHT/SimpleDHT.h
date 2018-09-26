@@ -1,18 +1,18 @@
 /*
  The MIT License (MIT)
- 
+
  Copyright (c) 2016 winlin
- 
+
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  copies of the Software, and to permit persons to whom the Software is
  furnished to do so, subject to the following conditions:
- 
+
  The above copyright notice and this permission notice shall be included in all
  copies or substantial portions of the Software.
- 
+
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -52,12 +52,12 @@ public:
     // @remark the min delay for this method is 1s.
     int read(int pin, byte* ptemperature, byte* phumidity, byte pdata[40]);
 private:
-    // confirm the OUTPUT is level in us, 
+    // confirm the OUTPUT is level in us,
     // for example, when DHT11 start sample, it will
     //    1. PULL LOW 80us, call confirm(pin, 80, LOW)
     //    2. PULL HIGH 80us, call confirm(pin, 80, HIGH)
     // @return 0 success; oterwise, error.
-    // @remark should never used to read bits, 
+    // @remark should never used to read bits,
     //    for function call use more time, maybe never got bit0.
     // @remark please use simple_dht11_read().
     int confirm(int pin, int us, byte level);
